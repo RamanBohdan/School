@@ -1,13 +1,17 @@
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
 public class AbstractSchoolClass {
 
-    String teacherName;
-    int classNumber;
-    String studentName;
+    protected String teacher;
+    protected String classNumber;
+    protected String studentName;
 
-    public AbstractSchoolClass(String teacherName, int classNumber, String studentName) {
-        this.teacherName = teacherName;
+    public AbstractSchoolClass(String teacher, String classNumber, String studentName) {
+        this.teacher = teacher;
         this.classNumber = classNumber;
         this.studentName = studentName;
     }
-
 }
