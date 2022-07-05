@@ -1,9 +1,8 @@
 import lombok.Data;
 
 @Data
-public class Classroom{
+public class Classroom extends Teacher {
     private Teacher teacher;
-
 
 }
 

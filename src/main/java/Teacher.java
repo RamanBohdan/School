@@ -1,9 +1,6 @@
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.ArrayList;
-import java.util.List;
 
 @Data
 public class Teacher extends Student {
@@ -21,10 +18,9 @@ public class Teacher extends Student {
     private String teacherIQ;
     private String teacherNumberOfItems;
 
-    private List<Student> students;
-
     public Teacher getListStudentsForTeacher() {
-        List<String> list = new ArrayList<>();
+        ArrayList<String> list = new ArrayList<>();
+     //   list.add(1,"What");
         list.add(student.getStudentName());
         list.add(student.getStudentSurname());
         list.add(student.getStudentAge());

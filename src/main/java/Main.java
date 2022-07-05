@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class Main {
     public static void main(String[] args) {
 
@@ -18,10 +16,37 @@ public class Main {
         schools.add(new AbstractSchoolClass("Alina","11","Aleksandr"));
          */
 
-Teacher teacher = new Teacher();
-Classroom classroom = new Classroom();
+        Student student = new Student();
+        student.setStudentAge("18");
+        student.setStudentEmail("gmail.com");
+        student.setStudentGender("Man");
+        student.setStudentHeight("181");
+        student.setStudentWeight("76");
+        student.setStudentId("1");
+        student.setStudentIQ("92");
+        student.setStudentName("Maksim");
+        student.setStudentSurname("Pechkin");
+        student.setStudentNationality("Belarus");
+        student.setStudentPhone("+375291234567");
+        student.setStudentSkinColor("White");
 
+        Teacher teacher = new Teacher();
+        teacher.getListStudentsForTeacher();
 
+        /*
+        teacher.setStudentAge("19");
+        teacher.setStudentEmail("gmail.com");
+        teacher.setStudentGender("Man");
+        teacher.setStudentHeight("180");
+        teacher.setStudentWeight("79");
+        teacher.setStudentId("111");
+        teacher.setStudentIQ("50");
+        teacher.setStudentName("Ivan");
+        teacher.setStudentSurname("Petrovich");
+        teacher.setStudentNationality("Belarus");
+        teacher.setStudentPhone("+3725291234567");
+        teacher.setStudentSkinColor("White");
 
+         */
     }
 }
