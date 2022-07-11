@@ -1,8 +1,12 @@
 import lombok.Data;
 
-@Data
-public class Classroom extends Teacher {
-    private Teacher teacher;
+import java.util.ArrayList;
 
+@Data
+public class Classroom{
+    private ArrayList<Teacher> teachers;
+    private int countDesk;
+    private int countWindow;
+    private String formatClass;
 }
 

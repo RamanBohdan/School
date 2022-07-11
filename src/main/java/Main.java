@@ -1,52 +1,59 @@
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-
-        /*
-        ArrayList<AbstractSchoolClass> schools = new ArrayList<>(128);
-        schools.add(new AbstractSchoolClass("Inna", "1", "Bob"));
-        schools.add(new AbstractSchoolClass("Kamilla", "2", "Michael"));
-        schools.add(new AbstractSchoolClass("Tamara","3","Konstantin"));
-        schools.add(new AbstractSchoolClass("Elena","4","Nataliya"));
-        schools.add(new AbstractSchoolClass("Vasilisa", "4", "Mariya"));
-        schools.add(new AbstractSchoolClass("Valeriya", "6", "Sofia"));
-        schools.add(new AbstractSchoolClass("Juliya", "7","Raman"));
-        schools.add(new AbstractSchoolClass("Vladislava","8", "Kirill"));
-        schools.add(new AbstractSchoolClass("Vera", "9","Kira"));
-        schools.add(new AbstractSchoolClass("Svetlana","10","Maksim"));
-        schools.add(new AbstractSchoolClass("Alina","11","Aleksandr"));
-         */
-
+        // создать поле список студентов в классе учитель.
+        // В Main создаю судентов.
+        // Добавляю их в список.
+        // Этот список сетаю в учителя.
+        //  создать иерархию данных
         Student student = new Student();
-        student.setStudentAge("18");
+        ArrayList<Student> studentsList = new ArrayList<>(128);
+        student.setStudentAge(18);
         student.setStudentEmail("gmail.com");
         student.setStudentGender("Man");
-        student.setStudentHeight("181");
-        student.setStudentWeight("76");
-        student.setStudentId("1");
-        student.setStudentIQ("92");
+        student.setStudentHeight(181);
+        student.setStudentWeight(76);
+        student.setStudentId(1);
+        student.setStudentIQ(92);
         student.setStudentName("Maksim");
         student.setStudentSurname("Pechkin");
         student.setStudentNationality("Belarus");
-        student.setStudentPhone("+375291234567");
+        student.setStudentPhone(1234567);
         student.setStudentSkinColor("White");
+        studentsList.add(student);
 
         Teacher teacher = new Teacher();
-        teacher.getListStudentsForTeacher();
+        teacher.setStudents(studentsList);
 
-        /*
-        teacher.setStudentAge("19");
-        teacher.setStudentEmail("gmail.com");
-        teacher.setStudentGender("Man");
-        teacher.setStudentHeight("180");
-        teacher.setStudentWeight("79");
-        teacher.setStudentId("111");
-        teacher.setStudentIQ("50");
-        teacher.setStudentName("Ivan");
-        teacher.setStudentSurname("Petrovich");
-        teacher.setStudentNationality("Belarus");
-        teacher.setStudentPhone("+3725291234567");
-        teacher.setStudentSkinColor("White");
+        teacher.setTeacherAge(54);
+        teacher.setTeacherEmail("teacher@gmail.com");
+        teacher.setTeacherGender("Women");
+        teacher.setTeacherId(12);
+        teacher.setTeacherIQ(99);
+        teacher.setTeacherName("Irina");
+        teacher.setTeacherSurname("Ivanova");
+        teacher.setTeacherNationality("Belarus");
+        teacher.setTeacherNumberOfItems(2);
+        teacher.setTeacherPhone(1234567);
+        teacher.setTeacherQualificationLevel("Height");
+        teacher.setTeacherWorkExperience(21);
 
-         */
+        ArrayList<Teacher> teacherList = new ArrayList<>(128);
+        teacherList.add(teacher);
+
+        Classroom classroom = new Classroom();
+        classroom.setTeachers(teacherList);
+        classroom.setCountDesk(2);
+        classroom.setCountWindow(5);
+        classroom.setFormatClass("maths class");
+
+        ArrayList<Classroom> classroomSchoolList = new ArrayList<>(128);
+        classroomSchoolList.add(classroom);
+
+        School school = new School();
+        school.setClassrooms(classroomSchoolList);
+
+        System.out.println(school);
     }
 }

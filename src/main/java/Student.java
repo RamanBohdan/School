@@ -1,19 +1,19 @@
 import lombok.*;
 
 @Data
-public class Student {
+public class Student{
 
-   private String studentName;
-   private String studentSurname;
-   private String studentAge;
-   private String studentPhone;
-   private String studentEmail;
-   private String studentWeight;
-   private String studentHeight;
-   private String studentId;
-   private String studentGender;
-   private String studentSkinColor;
-   private String studentIQ;
-   private String studentNationality;
-   
+    private String studentName;
+    private String studentSurname;
+    private int studentAge;
+    private int studentPhone;
+    private String studentEmail;
+    private int studentWeight;
+    private int studentHeight;
+    private int studentId;
+    private String studentGender;
+    private String studentSkinColor;
+    private int studentIQ;
+    private String studentNationality;
+
 }
