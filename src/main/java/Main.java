@@ -53,7 +53,6 @@ public class Main {
 
         School school = new School();
         school.setClassrooms(classroomSchoolList);
-
         System.out.println(school);
     }
 }
