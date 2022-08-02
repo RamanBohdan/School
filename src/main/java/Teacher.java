@@ -4,7 +4,9 @@ import java.util.ArrayList;
 
 @Data
 public class Teacher {
+
     private ArrayList<Student> students;
+
     private String teacherName;
     private String teacherSurname;
     private int teacherId;
