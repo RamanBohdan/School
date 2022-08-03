@@ -34,7 +34,6 @@ public class Main {
         student1.setStudentPhone(112233445);
         studentsList.add(student1);
 
-
         Student student2 = new Student();
         student2.setStudentAge(20);
         student2.setStudentName("Minny");
@@ -70,6 +69,7 @@ public class Main {
         teacherList.add(teacher);
 
         Teacher teacher1 = new Teacher();
+        teacher1.setStudents(studentsList);
         teacher1.setTeacherAge(34);
         teacher1.setTeacherEmail("teacherSchool@gmail.com");
         teacher1.setTeacherGender("Man");
@@ -85,6 +85,7 @@ public class Main {
         teacherList.add(teacher1);
 
         Teacher teacher2 = new Teacher();
+        teacher2.setStudents(studentsList);
         teacher2.setTeacherAge(40);
         teacher2.setTeacherEmail("teacherBest@gmail.com");
         teacher2.setTeacherGender("Women");
@@ -109,12 +110,14 @@ public class Main {
         classroomList.add(classroom);
 
         Classroom classroom1 = new Classroom();
+        classroom1.setTeachers(teacherList);
         classroom1.setCountDesk(1);
         classroom1.setCountWindow(6);
         classroom1.setFormatClass("physic class");
         classroomList.add(classroom1);
 
         Classroom classroom2 = new Classroom();
+        classroom2.setTeachers(teacherList);
         classroom2.setCountDesk(1);
         classroom2.setCountWindow(6);
         classroom2.setFormatClass("IT class");
