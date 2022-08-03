@@ -1,6 +1,12 @@
 import java.util.ArrayList;
 
 public class Main {
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
     public static void main(String[] args) {
 
         Student student = new Student();
@@ -126,6 +132,14 @@ public class Main {
         School school = new School();
         school.setClassrooms(classroomList);
 
-        System.out.println(classroomList);
+      printClassroomList(classroomList);
+
+
+    }
+
+    public static void printClassroomList(ArrayList<Classroom> classrooms) {
+        for (int i = 0; i < classrooms.size(); i++) {
+            System.out.println(classrooms.get(i));
+        }
     }
 }
