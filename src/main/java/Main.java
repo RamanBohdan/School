@@ -1,18 +1,16 @@
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
-
-    @Override
-    public String toString() {
-        return super.toString();
-    }
 
     public static void main(String[] args) {
 
         Student student = new Student();
         ArrayList<Student> studentsList = new ArrayList<>();
         student.setStudentAge(18);
-        student.setStudentEmail("gmail.com");
+        student.setStudentEmail("@gmail.com");
         student.setStudentGender("Man");
         student.setStudentHeight(181);
         student.setStudentWeight(76);
@@ -49,7 +47,7 @@ public class Main {
         student2.setStudentWeight(50);
         student2.setStudentId(3);
         student2.setStudentIQ(76);
-        student2.setStudentNationality("Belarus");
+        student2.setStudentNationality("Armenia");
         student2.setStudentGender("Woman");
         student2.setStudentSkinColor("Black");
         student2.setStudentPhone(556677889);
@@ -57,7 +55,6 @@ public class Main {
 
         Teacher teacher = new Teacher();
         teacher.setStudents(studentsList);
-
         teacher.setTeacherAge(54);
         teacher.setTeacherEmail("teacher@gmail.com");
         teacher.setTeacherGender("Women");
@@ -65,7 +62,7 @@ public class Main {
         teacher.setTeacherIQ(99);
         teacher.setTeacherName("Irina");
         teacher.setTeacherSurname("Ivanova");
-        teacher.setTeacherNationality("Belarus");
+        teacher.setTeacherNationality("Armenia");
         teacher.setTeacherNumberOfItems(2);
         teacher.setTeacherPhone(123456799);
         teacher.setTeacherQualificationLevel("Height");
@@ -110,7 +107,7 @@ public class Main {
         classroom.setTeachers(teacherList);
         classroom.setCountDesk(2);
         classroom.setCountWindow(5);
-        classroom.setFormatClass("maths class");
+        classroom.setFormatClass("math class");
 
         ArrayList<Classroom> classroomList = new ArrayList<>();
         classroomList.add(classroom);
@@ -132,9 +129,63 @@ public class Main {
         School school = new School();
         school.setClassrooms(classroomList);
 
-      printClassroomList(classroomList);
+        printClassroomList(classroomList);
+        System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------");
 
+        List<Student> studentsNationality = studentsList.stream()
+                .sorted(Comparator.comparing(Student::getStudentNationality))
+                .collect(Collectors.toList());
+        System.out.println("Национальность: " + studentsNationality);
 
+        List<Student> studentNationalityFilter = studentsList.stream()
+                .filter(studentNationality -> studentNationality.getStudentNationality().contains("a"))
+                .collect(Collectors.toList());
+        System.out.println("Национальность с применением фильтра: " + studentNationalityFilter);
+
+        List<Student> studentAge = studentsList.stream()
+                .filter(studentX -> studentX.getStudentAge() > 18)
+                .collect(Collectors.toList());
+        System.out.println("Фильтрация по возрасту: " + studentAge);
+
+        List<Student> studentAgeAndGender = studentsList.stream()
+                .filter(student3 -> student3.getStudentGender().contains("M"))
+                .filter(student3 -> student3.getStudentAge() >= 18)
+                .collect(Collectors.toList());
+        System.out.println("Фильтрация по возрасту и полу: " + studentAgeAndGender);
+
+        List<List<Teacher>> teacherSum = classroomList.stream()
+                .map(Classroom::getTeachers).collect(Collectors.toList());
+        System.out.println("Смапить учителей: " + teacherSum);
+
+        List<List<Student>> studentsSum = classroomList.stream()
+                .map(Classroom::getStudents).collect(Collectors.toList());
+        System.out.println("Смапить студентов: " + studentsSum);
+
+        int sum = studentsList.stream()
+                .map(Student::getStudentAge).mapToInt(Integer::intValue).sum();
+        System.out.println("Сумма возрастов студентов: " + sum);
+
+        List<Student> students = studentsList.stream()
+                .sorted(Comparator.comparing(Student::getStudentEmail))
+                .sorted(Comparator.comparing(Student::getStudentHeight)
+                        .thenComparing(x -> x.getStudentEmail().contains("@m"))
+                        .thenComparing(p -> p.getStudentHeight() > 190))
+                .collect(Collectors.toList());
+        System.out.println("Сортировка по полям Email  и Рост: " + students);
+
+        boolean studentAnyMatch = studentsList.stream()
+                .skip(1)
+                .anyMatch(student3 -> student3.getStudentSurname().contains("a"));
+        System.out.println("AnyMatch: " + studentAnyMatch);
+
+        boolean studentAllMatch = studentsList.stream()
+                .distinct()
+                .allMatch(studentMatch -> studentMatch.getStudentEmail().contains("@"));
+        System.out.println("AllMatch: " + studentAllMatch);
+
+        boolean studentNoneMatch = studentsList.stream()
+                .noneMatch(studentNone -> studentNone.getStudentId() > 10);
+        System.out.println("NoneMatch: " + studentNoneMatch);
     }
 
     public static void printClassroomList(ArrayList<Classroom> classrooms) {

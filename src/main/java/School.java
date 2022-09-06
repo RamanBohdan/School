@@ -1,10 +1,9 @@
 import lombok.Data;
-
-import java.util.ArrayList;
+import java.util.List;
 
 @Data
 public class School {
 
-    ArrayList<Classroom> classrooms;
+    List<Classroom> classrooms;
 }
 
