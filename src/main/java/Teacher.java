@@ -1,12 +1,9 @@
 import lombok.Data;
-
-import java.util.ArrayList;
+import java.util.List;
 
 @Data
 public class Teacher {
-
-    private ArrayList<Student> students;
-
+    private List<Student> students;
     private String teacherName;
     private String teacherSurname;
     private int teacherId;
