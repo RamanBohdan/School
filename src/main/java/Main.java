@@ -158,7 +158,8 @@ public class Main {
         System.out.println("Смапить учителей: " + teacherSum);
 
         List<List<Student>> studentsSum = classroomList.stream()
-                .map(Classroom::getStudents).collect(Collectors.toList());
+                .map(Classroom::getStudents)
+                .collect(Collectors.toList());
         System.out.println("Смапить студентов: " + studentsSum);
 
         int sum = studentsList.stream()
