@@ -3,7 +3,6 @@ import java.util.List;
 
 @Data
 public class Teacher {
-
     private List<Student> students;
     private String teacherName;
     private String teacherSurname;
