@@ -189,8 +189,8 @@ public class Main {
     }
 
     public static void printClassroomList(ArrayList<Classroom> classrooms) {
-        for (Classroom classroom : classrooms) {
-            System.out.println(classroom);
+        for (int i = 0; i < classrooms.size(); i++) {
+            System.out.println(classrooms.get(i));
         }
     }
 }
