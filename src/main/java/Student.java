@@ -1,7 +1,7 @@
 import lombok.*;
 
 @Data
-public class Student{
+public class Student {
     private String studentName;
     private String studentSurname;
     private int studentAge;
@@ -14,5 +14,4 @@ public class Student{
     private String studentSkinColor;
     private int studentIQ;
     private String studentNationality;
-
 }
