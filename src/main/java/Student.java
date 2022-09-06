@@ -1,6 +1,7 @@
 import lombok.*;
 @Data
 public class Student {
+
     private String studentName;
     private String studentSurname;
     private int studentAge;
