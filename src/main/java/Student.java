@@ -14,4 +14,5 @@ public class Student{
     private String studentSkinColor;
     private int studentIQ;
     private String studentNationality;
+
 }
